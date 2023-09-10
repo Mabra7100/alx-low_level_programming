@@ -1,7 +1,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* betty style doc for function main goes there */
+
+/**
+* main - Entry point
+*
+* Return: returns 0 when everything works fine
+*
+*/
+
 int main(void)
 {
 	int n;

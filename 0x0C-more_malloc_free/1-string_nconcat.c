@@ -1,19 +1,42 @@
 #include "main.h"
 
 /**
- * string_nconcat - allocates a block of memory to store concatenated strings.
- * @s1: the first string
- * @s2: the second string
- * @n: the number of s2 to concatenate to s1
- *
- * Return: a pointer to allocated memory block.
- */
+* string_nconcat - prints concatenate string;
+* @s1: input string.
+* @s2: input string.
+* @n: len s2 string for print.
+* Return: Nothing.
+*/
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
+	unsigned int l1, i, e;
+	char *a;
 
-	while (s1 && s1[len1])
-		len1++;
-	while (s2 && s2[len2])
-		len2++;
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+	l1 = 0;
+	while (s1[l1])
+		l1++;
+
+	a = malloc(sizeof(*a) * l1 + n + 1);
+
+	if (a == NULL)
+		return (NULL);
+
+	for (i = 0, e = 0; i < (l1 + n); i++)
+	{
+		if (i < l1)
+		{
+			a[i] = s1[i];
+		}
+		else
+		{
+			a[i] = s2[e++];
+		}
+	}
+	a[i] = '\0';
+	return (a);
+}

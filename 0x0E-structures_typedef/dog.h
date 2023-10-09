@@ -1,25 +1,25 @@
-#ifndef DOG_H_INCLUDED
-#define DOG_H_INCLUDED
-
-#include <stdlib.h>
-#include <stdio.h>
+#ifndef _DOG_H_
+#define _DOG_H_
 
 /**
- * struct dog - Stores all the elements bellow
- * @name: The name of the dog
- * @age:  The Age of the dog
- * @owner: The name of the dog owner
- *
- * Description: this stores all the variables pass to the elements
+ * dog_t - Typedef for struct dog
  */
-
 typedef struct dog dog_t;
 
+/**
+ * struct dog - struct that stores some information of a dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
+ *
+ * Description: struct called "dog" that stores its name, its age
+ * and the name of its owner.
+ */
 struct dog
 {
-char *name;
-float age;
-char *owner;
+	char *name;
+	float age;
+	char *owner;
 };
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
